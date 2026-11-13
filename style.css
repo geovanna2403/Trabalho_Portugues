@@ -4,3 +4,20 @@
 
 }
 
+.header {
+    background-color: blue;
+    padding: 20px;
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
