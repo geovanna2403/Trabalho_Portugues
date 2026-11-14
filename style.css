@@ -4,20 +4,66 @@
 
 }
 
-.header {
+.header  {
     background-color: blue;
     padding: 20px;
     text-align: center;
+    a {
+        color: white;
+        text-decoration: none;
+    }
 }
 
-.links {
+.rodape {
+    background-color: blue;
+    padding: 20px;
+    text-align: center;
+    
+    color: white;
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+
+
+.rodape-links {
     display: flex;
     justify-content: center;
     gap: 20px;
     color: white;
 }
 
-.link {
+.menu-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     color: white;
-    text-decoration: none;
 }
+
+.container {
+    display: grid;
+    grid-template-columns: 3 2fr;
+    grid-template-rows: 2 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    
+
+    a {
+        color: blue;
+        text-decoration: none;
+    }
+}
+
+
+
+
+
