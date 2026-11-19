@@ -168,6 +168,43 @@ body {
   color: #333333;           /* Cor do texto para boa legibilidade */
 }
 
+:root {
+
+    /* FAMÍLIAS DAS FONTES */
+    --fonte-texto: 'Karla', sans-serif;
+    --fonte-titulo: 'Michroma', sans-serif;
+
+    /* TAMANHOS DAS FONTES */
+    --tamanho-texto: 1rem;
+    --tamanho-subtitulo: 1.5rem;
+    --tamanho-titulo: 2rem;
+
+    /* PESOS DAS FONTES */
+    --peso-texto: 400;
+    --peso-subtitulo: 400;
+    --peso-titulo: 400;
+}
+
+/* TEXTOS */
+body {
+    font-family: var(--fonte-texto);
+    font-size: var(--tamanho-texto);
+    font-weight: var(--peso-texto);
+}
+
+/* TÍTULOS PRINCIPAIS */
+h1 {
+    font-family: var(--fonte-titulo);
+    font-size: var(--tamanho-titulo);
+    font-weight: var(--peso-titulo);
+}
+
+/* SUBTÍTULOS */
+h2, h3 {
+    font-family: var(--fonte-titulo);
+    font-size: var(--tamanho-subtitulo);
+    font-weight: var(--peso-subtitulo);
+}
 
 
 .titulo-resenha {
@@ -177,7 +214,7 @@ body {
     width: 100%;
     padding: 0 40px;
     box-sizing:border-box;
-    color:  rgb(12, 12, 104);
+    color:  #0d33b3;
 }
 
 .texto-resenha {
@@ -188,10 +225,12 @@ body {
 
 .texto-resenha h1 {
     margin: 0;
+    font-size: 50px;
 }
 
 .texto-resenha p {
     margin: 0;
+    color:#000000
 }
 
 .titulo-resenha img {
@@ -226,7 +265,7 @@ body {
 /*conteudo da resenha*/
 
 .conteudo-resenha {
-    border-left: 4px solid #83b9e5;
+    border-left: 4px solid #2699e6;
     padding-left: 20px;
     margin: 30px 40px;
     .conteudo-resenhas {
@@ -237,7 +276,7 @@ body {
 
 .conteudo-resenha h4 {
     font-family: Georgia, serif;
-    color:   rgb(12, 12, 104);
+    color:  #0d33b3;
     font-size: 28px;
     margin-bottom: 12px;
 }
@@ -251,8 +290,13 @@ body {
 
 .conteudo-resenha strong {
     font-weight: bold;
-    color: #0d33b3;
+    color: #1a66cc;
+    text-decoration: underline;
+    text-decoration-color: #1a66cc;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
 }
+
 
 .lista-resenhas {
 
@@ -269,13 +313,15 @@ body {
     width: 90%;
     min-height: 130px;
     margin: 0 auto;
-    display: flex;
+    display: grid;
     align-items: center;
     border-radius: 35px;
     overflow: hidden;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
+    margin-bottom: 25px;
+    grid-template-columns: repeat (2, 1fr);
     
 
     background-color: #FFFDD0;
@@ -284,14 +330,14 @@ body {
     border: 1px solid #2699e6;
     border-radius: 30px;
 
-    padding: 15px;
+    padding: 20px;
     min-height: 150px;
     box-shadow: 0 3px 10px rgba(16, 43, 84, 0.08);
 }
 
 .card-resenha img {
     width: 90px;
-    height: 120px;
+    height: 130px;
     object-fit: cover;
     border-radius: 8px;
 }
