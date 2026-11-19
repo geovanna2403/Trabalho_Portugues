@@ -4,13 +4,132 @@
   #0d33b3*/
 
 
+/*geral ======================================================================================================*/
+/* ===== RESPONSIVIDADE PARA CELULARES ===== */
+
+@media (max-width: 600px) {
+
+    /* MENU */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 10px;
+    }
+
+    header img {
+        width: 75px !important;
+        height: 75px !important;
+    }
+
+    .menu-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .menu-links a {
+        font-size: 14px;
+    }
+
+    /* CONTEÚDO */
+    main {
+        width: 100%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    /* RODAPÉ */
+    .rodape {
+        padding: 20px 10px;
+    }
+
+    .rodape-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .rodape-links a {
+        font-size: 13px;
+    }
+}
 
 
+/* TÍTULO DOS CONTOS */
+
+.titulo-conto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+    color: #0d33b3;
+}
+
+.texto-conto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.texto-conto h1 {
+    margin: 0;
+    font-size: 50px;
+}
+
+.texto-conto p {
+    margin: 0;
+    color: #000000;
+}
+
+/* DETALHE DO TÍTULO */
+
+.titulo-conto .detalhe-titulo {
+    display: flex;
+    align-items: center;
+    width: 420px;
+    margin-top: 5px;
+}
+
+.titulo-conto .detalhe-titulo span:first-child {
+    width: 100%;
+    height: 4px;
+    background-color: #1a66cc;
+}
+
+.titulo-conto .detalhe-titulo .estrela {
+    color: #1a66cc;
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+    .titulo-conto {
+        padding: 0 10px;
+    }
+
+    .texto-conto {
+        width: 100%;
+    }
+
+    .texto-conto h1 {
+        font-size: 32px;
+    }
+
+    .titulo-conto .detalhe-titulo {
+        max-width: 250px;
+    }
+}
 /* index------------------------------------------------------------------------------------------------------------------*/
-header{
-    background-color: rgb(12, 12, 104);
-    padding: 10px 25px;
-    min-height: 90px;
+header {
+    background-color: #0d33b3;
+    padding: 25px 30px;
+    min-height: 120px;
 
     display: flex;
     align-items: center;
@@ -57,26 +176,62 @@ main{
 }
 
 /* Menu aqui */
+/* RODAPÉ */
 
 .rodape {
     background-color: rgb(12, 12, 104);
-    padding: 20px;
+    padding: 35px 20px 15px;
     text-align: center;
-    
     color: white;
-    a {
-        color: white;
-        text-decoration: none;
-    }
+    margin-top: 50px;
 }
 
+.rodape p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
 
+.rodape a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
 .rodape-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    color: white;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.rodape-links a:hover {
+    color: #2699e6;
+}
+
+.rodape-final {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    margin-top: 25px;
+    padding-top: 15px;
+}
+
+.rodape-final p {
+    font-size: 14px;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+    .rodape {
+        padding: 25px 15px 15px;
+    }
+
+    .rodape-links {
+        gap: 15px;
+    }
 }
 
 .menu-links {
@@ -159,12 +314,380 @@ header img {
 
 
 /*sobre-------------------------------------------------------------------------------------------------------------------*/
+/*foto de perfil*/
+
+/* Área da equipe */
+.titulo-equipe {
+    text-align: center;
+    margin: 40px 0 25px;
+}
+
+/* Organização dos cards */
+.equipe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card individual */
+.fotoperfil {
+    width: 190px;
+    min-height: 240px;
+    padding: 18px 12px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+.fotoperfil:hover {
+    transform: translateY(-5px);
+}
+
+/* Fotos padronizadas */
+.fotoperfil img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 3px solid #4b9cd3;
+}
+
+/* Nome */
+.fotoperfil h2 {
+    font-size: 17px;
+    margin-top: 12px;
+}
+
+/* Função */
+.fotoperfil p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .equipe {
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .fotoperfil {
+        width: 155px;
+        min-height: 220px;
+    }
+
+    .fotoperfil img {
+        width: 95px;
+        height: 95px;
+    }
+}
+
+
+/*foto de perfil*/
+
+/* Área da equipe */
+.titulo-equipe {
+    text-align: center;
+    margin: 40px 0 25px;
+}
+
+/* Organização dos cards */
+.equipe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card individual */
+.fotoperfil {
+    width: 190px;
+    min-height: 240px;
+    padding: 18px 12px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+.fotoperfil:hover {
+    transform: translateY(-5px);
+}
+
+/* Fotos padronizadas */
+.fotoperfil img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 3px solid #4b9cd3;
+}
+
+/* Nome */
+.fotoperfil h2 {
+    font-size: 17px;
+    margin-top: 12px;
+}
+
+/* Função */
+.fotoperfil p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .equipe {
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .fotoperfil {
+        width: 155px;
+        min-height: 220px;
+    }
+
+    .fotoperfil img {
+        width: 95px;
+        height: 95px;
+    }
+}
+
+/* CARDS CLICÁVEIS */
+
+.card-link {
+    display: block;
+    text-decoration: none;
+    background-color: #123b5d !important;
+    color: #ffffff !important;
+    cursor: pointer;
+    border: 1px solid #1d5278;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* TÍTULOS DOS CARDS */
+
+.card-link h2 {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+/* TEXTOS DOS RESUMOS */
+
+.card-link p {
+    color: #ffffff !important;
+    line-height: 1.6;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.card-link:hover {
+    background-color: #174c70 !important;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+/* ===== SOBRE - CELULAR ===== */
+
+@media (max-width: 600px) {
+
+    main h1 {
+        font-size: 25px;
+        line-height: 1.3;
+    }
+
+    main p {
+        font-size: 16px;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    main .card {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 20px;
+    }
+
+    main .card h2 {
+        font-size: 22px;
+    }
+
+    main .card p {
+        font-size: 15px;
+    }
+}
 /*conto-------------------------------------------------------------------------------------------------------------------*/
+/* FOTO DO LIVRO */
+
+.conto-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+.conto-item img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 4px solid #1a66cc;
+    padding: 5px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+.conto-item figcaption {
+    margin-top: 12px;
+    font-size: 15px;
+    text-align: center;
+    color: #555;
+    font-style: italic;
+}
+
+/* SEÇÃO DOS CONTOS */
+
+#conto {
+    background: linear-gradient(135deg, #0d33b3, #174c70);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px auto;
+}
+
+/* TÍTULO */
+
+#conto h2 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#conto p {
+    color: white;
+    text-align: center;
+    font-size: 17px;
+}
+
+/* CARDS */
+
+#conto .conto-card {
+    background: rgba(255, 255, 255, 0.90);
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 3px 8px #00000020;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#conto .conto-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+#conto .conto-card h3 {
+    color: #0d33b3;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#conto .conto-card h4 {
+    color: #333;
+    font-size: 18px;
+    margin: 12px 0 20px;
+}
+
+/* BOTÃO */
+
+#conto .conto-card a {
+    display: inline-block;
+    background-color: #1a66cc;
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#conto .conto-card a:hover {
+    background-color: #0d33b3;
+}
+
+/* TEXTOS EXPLICATIVOS */
+
+#texto1, #texto2 {
+    background-color: #f2f8ff;
+    border-left: 5px solid #2699e6;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 35px auto;
+    max-width: 1100px;
+    box-shadow: 0 3px 12px rgba(13, 51, 179, 0.08);
+}
+
+#texto1 h2, #texto2 h2 {
+    color: #0d33b3;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+
+#texto1 p, #texto2 p {
+    color: #26394d;
+    line-height: 1.8;
+    text-align: justify;
+    font-size: 16px;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .conto-item img {
+        max-width: 260px;
+    }
+
+    .conto-item {
+        margin: 20px auto;
+        padding: 5px;
+    }
+
+    #conto {
+        padding: 20px 15px;
+        margin: 20px 10px;
+    }
+
+    #conto .conto-card {
+        padding: 20px 15px;
+    }
+
+    #conto h2 {
+        font-size: 25px;
+    }
+}
 /*cordel------------------------------------------------------------------------------------------------------------------*/
 /*resenha-----------------------------------------------------------------------------------------------------------------*/
 
 body {
-  background-color: #FFFDD0; /* Aplica a cor creme no fundo */
+  background-color: #FFF9EF; /* Aplica a cor creme no fundo */
   color: #333333;           /* Cor do texto para boa legibilidade */
 }
 
@@ -453,4 +976,95 @@ h2, h3 {
     margin-bottom: 8px;
 }
 
+/* Celulares */
+@media (max-width: 650px) {
+    .lista-resenhas {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== RESENHA - CELULAR ===== */
+
+@media (max-width: 600px) {
+
+    /* TÍTULO E IMAGEM */
+    .titulo-resenha {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .texto-resenha {
+        width: 100%;
+        align-items: center;
+    }
+
+    .texto-resenha h1 {
+        font-size: 28px;
+    }
+
+    .titulo-resenha .imagem-livro {
+        width: 100%;
+    }
+
+    .titulo-resenha img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .detalhe-titulo {
+        max-width: 180px;
+    }
+
+    /* TEXTOS EXPLICATIVOS */
+    .conteudo-resenha {
+        margin: 25px 5px;
+        padding-left: 12px;
+    }
+
+    .conteudo-resenha h4 {
+        font-size: 22px;
+    }
+
+    .conteudo-resenha p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* CARDS DOS LIVROS */
+    .card-resenha {
+        width: 100%;
+        min-height: 130px;
+        padding: 12px;
+        gap: 12px;
+        border-radius: 18px;
+    }
+
+    .card-resenha img {
+        width: 75px;
+        height: 105px;
+        flex-shrink: 0;
+    }
+
+    .info-resenha {
+        min-width: 0;
+    }
+
+    .info-resenha h3 {
+        font-size: 16px;
+        overflow-wrap: break-word;
+    }
+
+    .info-resenha p {
+        font-size: 13px;
+    }
+
+    .card-resenha:hover {
+        transform: none;
+    }
+}
 /*reportagem-------------------------------------------------------------------------------------------------------------- */
