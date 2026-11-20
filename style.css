@@ -350,16 +350,7 @@ header img {
     object-fit: contain !important;
 }
 
-.qrcode {
-    text-align: center;
-    padding: 40px 20px;
-}
 
-.qrcode img {
-    width: 180px;
-    height: auto;
-    margin-top: 15px;
-}
 /*sobre-------------------------------------------------------------------------------------------------------------------*/
 /*foto de perfil*/
 
