@@ -1,11 +1,53 @@
 /*#FFFDD0
   #2699e6
   #1a66cc
-  #0d33b3*/
+  #0d33b3
+   #20323F;*/
 
 
 /*geral ======================================================================================================*/
 /* ===== RESPONSIVIDADE PARA CELULARES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap'); /*fonte dos textos*/
+
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');/*fonte do titulo*/
+
+:root {
+
+    /* FAMÍLIAS DAS FONTES */
+    --fonte-texto: 'Karla', sans-serif;
+    --fonte-titulo: 'Michroma', sans-serif;
+
+    /* TAMANHOS DAS FONTES */
+    --tamanho-texto: 1rem;
+    --tamanho-subtitulo: 1.5rem;
+    --tamanho-titulo: 2rem;
+
+    /* PESOS DAS FONTES */
+    --peso-texto: 400;
+    --peso-subtitulo: 400;
+    --peso-titulo: 400;
+}
+
+/* TEXTOS */
+body {
+    font-family: var(--fonte-texto);
+    font-size: var(--tamanho-texto);
+    font-weight: var(--peso-texto);
+}
+
+/* TÍTULOS PRINCIPAIS */
+h1 {
+    font-family: var(--fonte-titulo);
+    font-size: var(--tamanho-titulo);
+    font-weight: var(--peso-titulo);
+}
+
+/* SUBTÍTULOS */
+h2, h3 {
+    font-family: var(--fonte-titulo);
+    font-size: var(--tamanho-subtitulo);
+    font-weight: var(--peso-subtitulo);
+}
 
 @media (max-width: 600px) {
 
@@ -57,77 +99,73 @@
 }
 
 
-/* TÍTULO DOS CONTOS */
-
-.titulo-conto {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 40px;
-    box-sizing: border-box;
-    color: #0d33b3;
-}
-
-.texto-conto {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.texto-conto h1 {
-    margin: 0;
-    font-size: 50px;
-}
-
-.texto-conto p {
-    margin: 0;
-    color: #000000;
-}
-
-/* DETALHE DO TÍTULO */
-
-.titulo-conto .detalhe-titulo {
-    display: flex;
-    align-items: center;
-    width: 420px;
-    margin-top: 5px;
-}
-
-.titulo-conto .detalhe-titulo span:first-child {
-    width: 100%;
-    height: 4px;
-    background-color: #1a66cc;
-}
-
-.titulo-conto .detalhe-titulo .estrela {
-    color: #1a66cc;
-    font-size: 30px;
-    margin-left: 5px;
-}
-
-/* CELULAR */
-
-@media (max-width: 600px) {
-    .titulo-conto {
-        padding: 0 10px;
-    }
-
-    .texto-conto {
-        width: 100%;
-    }
-
-    .texto-conto h1 {
-        font-size: 32px;
-    }
-
-    .titulo-conto .detalhe-titulo {
-        max-width: 250px;
-    }
-}
 /* index------------------------------------------------------------------------------------------------------------------*/
+
+
+
+.imagem-home {
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.imagem-home figure {
+    width: 100%;
+    max-width: 750px;
+    margin: 0;
+    padding: 8px;
+    background: #20323F;
+    border: 1px solid #1E6FB8;
+    border-radius: 0;
+    box-shadow: 0 0 20px rgba(30, 111, 184, 0.2);
+    box-sizing: border-box;
+}
+
+.imagem-home figure img {
+    display: block;
+    width: 100% !important;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+}
+
+.imagem-home img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+}
+
+.imagem-home figcaption {
+    color: #DFF3E1;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 4px 2px;
+    line-height: 1.6;
+}
+
+/* BANNER DA PÁGINA INICIAL */
+
+.hero {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 header {
-    background-color: #0d33b3;
+    background-color: #011D56;
     padding: 25px 30px;
     min-height: 120px;
 
@@ -533,6 +571,74 @@ header img {
 /*conto-------------------------------------------------------------------------------------------------------------------*/
 /* FOTO DO LIVRO */
 
+/* TÍTULO DOS CONTOS */
+
+.titulo-conto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+    color: #0d33b3;
+}
+
+.texto-conto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.texto-conto h1 {
+    margin: 0;
+    font-size: 50px;
+}
+
+.texto-conto p {
+    margin: 0;
+    color: #000000;
+}
+
+/* DETALHE DO TÍTULO */
+
+.titulo-conto .detalhe-titulo {
+    display: flex;
+    align-items: center;
+    width: 420px;
+    margin-top: 5px;
+}
+
+.titulo-conto .detalhe-titulo span:first-child {
+    width: 100%;
+    height: 4px;
+    background-color: #1a66cc;
+}
+
+.titulo-conto .detalhe-titulo .estrela {
+    color: #1a66cc;
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+    .titulo-conto {
+        padding: 0 10px;
+    }
+
+    .texto-conto {
+        width: 100%;
+    }
+
+    .texto-conto h1 {
+        font-size: 32px;
+    }
+
+    .titulo-conto .detalhe-titulo {
+        max-width: 250px;
+    }
+}
 .conto-item {
     display: flex;
     flex-direction: column;
@@ -691,43 +797,6 @@ body {
   color: #333333;           /* Cor do texto para boa legibilidade */
 }
 
-:root {
-
-    /* FAMÍLIAS DAS FONTES */
-    --fonte-texto: 'Karla', sans-serif;
-    --fonte-titulo: 'Michroma', sans-serif;
-
-    /* TAMANHOS DAS FONTES */
-    --tamanho-texto: 1rem;
-    --tamanho-subtitulo: 1.5rem;
-    --tamanho-titulo: 2rem;
-
-    /* PESOS DAS FONTES */
-    --peso-texto: 400;
-    --peso-subtitulo: 400;
-    --peso-titulo: 400;
-}
-
-/* TEXTOS */
-body {
-    font-family: var(--fonte-texto);
-    font-size: var(--tamanho-texto);
-    font-weight: var(--peso-texto);
-}
-
-/* TÍTULOS PRINCIPAIS */
-h1 {
-    font-family: var(--fonte-titulo);
-    font-size: var(--tamanho-titulo);
-    font-weight: var(--peso-titulo);
-}
-
-/* SUBTÍTULOS */
-h2, h3 {
-    font-family: var(--fonte-titulo);
-    font-size: var(--tamanho-subtitulo);
-    font-weight: var(--peso-subtitulo);
-}
 
 
 .titulo-resenha {
