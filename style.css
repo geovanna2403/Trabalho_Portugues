@@ -49,6 +49,33 @@ h2, h3 {
     font-weight: var(--peso-subtitulo);
 }
 
+/* ===== BOTÕES DO MENU PRINCIPAL ===== */
+
+header .menu-links a {
+    display: inline-block;
+    background-color: #1a66cc;
+    color: white !important;
+    text-decoration: none;
+
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid #2699e6;
+
+    transition: all 0.3s ease;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+
+header .menu-links a:hover {
+    background-color: #2699e6;
+    border-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(38, 153, 230, 0.4);
+}
+
 @media (max-width: 600px) {
 
     /* MENU */
