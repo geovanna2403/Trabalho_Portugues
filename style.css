@@ -28,6 +28,28 @@
     --peso-titulo: 400;
 }
 
+/* BOTÃO SAIBA MAIS NA IMAGEM */
+
+.hero .btn-saiba-mais {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a66cc;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.hero .btn-saiba-mais:hover {
+    background-color: #0d33b3;
+}
+
 /* TEXTOS */
 body {
     font-family: var(--fonte-texto);
@@ -47,6 +69,33 @@ h2, h3 {
     font-family: var(--fonte-titulo);
     font-size: var(--tamanho-subtitulo);
     font-weight: var(--peso-subtitulo);
+}
+
+/* ===== BOTÕES DO MENU PRINCIPAL ===== */
+
+header .menu-links a {
+    display: inline-block;
+    background-color: #1a66cc;
+    color: white !important;
+    text-decoration: none;
+
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid #2699e6;
+
+    transition: all 0.3s ease;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+
+header .menu-links a:hover {
+    background-color: #2699e6;
+    border-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(38, 153, 230, 0.4);
 }
 
 @media (max-width: 600px) {
@@ -213,7 +262,6 @@ main{
 
 }
 
-/* Menu aqui */
 /* RODAPÉ */
 
 .rodape {
