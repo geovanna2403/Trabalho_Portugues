@@ -976,6 +976,19 @@ h2, h3 {
     margin-bottom: 8px;
 }
 
+.curiosidades .accordion-body i {
+    color:#1a66cc;
+    text-decoration: underline;
+    text-decoration-color: #1a66cc;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+}
+
+.curiosidades .accordion-body p{
+    padding: 3px;
+
+}
+
 /* Celulares */
 @media (max-width: 650px) {
     .lista-resenhas {
