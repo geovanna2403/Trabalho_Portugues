@@ -398,16 +398,7 @@ header img {
     object-fit: contain !important;
 }
 
-.qrcode {
-    text-align: center;
-    padding: 40px 20px;
-}
 
-.qrcode img {
-    width: 180px;
-    height: auto;
-    margin-top: 15px;
-}
 /*sobre-------------------------------------------------------------------------------------------------------------------*/
 /*foto de perfil*/
 
@@ -846,6 +837,7 @@ header img {
         font-size: 25px;
     }
 }
+
 /*cordel------------------------------------------------------------------------------------------------------------------*/
 /*resenha-----------------------------------------------------------------------------------------------------------------*/
 
@@ -1084,6 +1076,7 @@ body {
     text-decoration-color: #1a66cc;
     text-decoration-thickness: 2px;
     text-underline-offset: 8px;
+    padding: 8px;
 }
 
 .curiosidades .accordion-body strong {
@@ -1103,9 +1096,7 @@ body {
 }
 
 .curiosidades .accordion-body i {
-    color:#1a66cc;
-    text-decoration: underline;
-    text-decoration-color: #1a66cc;
+    color:#000000;
     text-decoration-thickness: 2px;
     text-underline-offset: 8px;
 }
@@ -1207,3 +1198,67 @@ body {
     }
 }
 /*reportagem-------------------------------------------------------------------------------------------------------------- */
+.imagem-reportagem {
+    width: 85%;
+    max-width: 1000px;
+    height: auto;
+    display: block;
+    margin:  auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+ 
+.reportagem p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #000000;
+    text-align: justify;
+    margin-bottom: 20px;
+    padding: 2px;
+}
+
+.reportagem p {
+    border-left: 4px solid #2699e6;
+    padding-left: 20px;
+    margin: 20px 30px;
+    .reportagem p {
+    background-color: #f7f4ef;
+    padding: 20px 5%;
+}
+}
+
+.titulo-reportagens {
+   color: #0d33b3;
+   font-size: 32px;
+   font-weight: normal;
+   text-align: center;
+   margin-top: 40px;
+   text-decoration: underline;
+   text-decoration-color: #2699e6;
+   text-decoration-thickness: 2px;
+   text-underline-offset: 8px;
+   padding: 12px;
+
+}
+
+.bi {
+    color:  #2699e6;
+    font-size: 25px;
+    margin-right: 10px;
+    
+}
+
+.video-reportagem {
+    width: 90%;
+    max-width: 1000px;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 15px;
+    padding:12px;
+}
+
+.titulo-entrevista {
+    color: #0d33b3
+}
+
