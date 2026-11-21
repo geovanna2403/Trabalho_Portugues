@@ -4,11 +4,7 @@
 // ==========================================
 
 const trabalhos = [
-    {
-        nome: "Contos",
-        descricao: "Conheça nossas produções de contos.",
-        link: "conto.html"
-    },
+   
     {
         nome: "Cordéis",
         descricao: "Conheça nossas produções de cordéis.",
@@ -65,42 +61,6 @@ const cordels = [
 ];
 
 
-// ==========================================
-// 3. ARRAY DE OBJETOS - CONTOS
-// ==========================================
-
-const contos = [
-    {
-        autor: "Geovanna Vital",
-        titulo: "Conto de Geovanna",
-        arquivo: "Contos/GeovanaVital_conto.pdf"
-    },
-    {
-        autor: "Marina Perera",
-        titulo: "Conto de Marina",
-        arquivo: "Contos/MarinaMatos_conto.pdf"
-    },
-    {
-        autor: "Maria Eduarda",
-        titulo: "Conto de Maria Eduarda",
-        arquivo: "Contos/MariaLira_conto.pdf"
-    },
-    {
-        autor: "Giovanna Fernandes",
-        titulo: "Conto de Giovanna",
-        arquivo: "Contos/Conto-GiovannaFernandes.pdf"
-    },
-    {
-        autor: "Rhuan Fonseca",
-        titulo: "Conto de Rhuan",
-        arquivo: "Contos/RhuanFonseca_conto.pdf"
-    },
-    {
-        autor: "Luis Felipe Moreno",
-        titulo: "Conto de Luis Felipe",
-        arquivo: "Contos/Luis Felipe_conto (1).pdf"
-    }
-];
 
 
 // ==========================================
@@ -118,8 +78,8 @@ function mostrarTrabalhos() {
         area.innerHTML += `
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">${trabalho.nome}</h5>
-                    <p class="card-text">${trabalho.descricao}</p>
+                    <h3>${trabalho.nome}</h3>
+                    <p>${trabalho.descricao}</p>
                     <a href="${trabalho.link}" class="btn btn-primary">
                         Ver trabalhos
                     </a>
@@ -128,7 +88,6 @@ function mostrarTrabalhos() {
         `;
     });
 }
-
 
 // ==========================================
 // 5. FUNÇÃO PARA MOSTRAR OS CORDÉIS
@@ -163,57 +122,6 @@ function mostrarCordels(lista) {
 
 
 // ==========================================
-// 6. FUNÇÃO PARA MOSTRAR OS CONTOS
-// ==========================================
-
-function mostrarContos(lista) {
-    const secoes = document.querySelectorAll("main #conto");
-
-    if (secoes.length === 0) return;
-
-    const area = secoes[0];
-
-    // Remove as seções repetidas com o mesmo ID
-    secoes.forEach((secao, indice) => {
-        if (indice > 0) {
-            secao.remove();
-        }
-    });
-
-    // Remove os cards antigos
-    const cardsAntigos = area.querySelector(".lista-contos");
-
-    if (cardsAntigos) {
-        cardsAntigos.remove();
-    }
-
-    const listaContos = document.createElement("div");
-    listaContos.className = "lista-contos";
-
-    lista.forEach((conto) => {
-        listaContos.innerHTML += `
-            <div class="card conto-card">
-                <div class="card-body">
-                    <h5 class="card-title">${conto.titulo}</h5>
-                    <p class="card-text">Autor: ${conto.autor}</p>
-                    <a href="${conto.arquivo}" target="_blank"
-                       class="btn btn-primary">
-                        Ler conto
-                    </a>
-                </div>
-            </div>
-        `;
-    });
-
-    if (lista.length === 0) {
-        listaContos.innerHTML = "<p>Nenhum conto encontrado.</p>";
-    }
-
-    area.appendChild(listaContos);
-}
-
-
-// ==========================================
 // 7. PESQUISA DE CORDÉIS COM FILTER E FIND
 // ==========================================
 
@@ -243,35 +151,6 @@ function pesquisarCordel() {
 
 
 // ==========================================
-// 8. PESQUISA DE CONTOS COM FILTER E FIND
-// ==========================================
-
-function pesquisarConto() {
-    const campo = document.querySelector("#pesquisa-conto");
-
-    if (!campo) return;
-
-    campo.addEventListener("input", function () {
-        const pesquisa = campo.value.toLowerCase().trim();
-
-        const resultado = contos.filter((conto) => {
-            return (
-                conto.titulo.toLowerCase().includes(pesquisa) ||
-                conto.autor.toLowerCase().includes(pesquisa)
-            );
-        });
-
-        // Procura uma correspondência exata
-        const encontrado = contos.find((conto) =>
-            conto.titulo.toLowerCase() === pesquisa
-        );
-
-        mostrarContos(resultado);
-    });
-}
-
-
-// ==========================================
 // 9. CRIAR CAMPOS DE PESQUISA
 // ==========================================
 
@@ -289,18 +168,7 @@ function criarPesquisas() {
         areaCordel.parentNode.insertBefore(campo, areaCordel);
     }
 
-    const areaConto = document.querySelector("main #conto");
-
-    if (areaConto && !document.querySelector("#pesquisa-conto")) {
-        const campo = document.createElement("input");
-
-        campo.type = "text";
-        campo.id = "pesquisa-conto";
-        campo.placeholder = "Pesquisar conto por título ou autor...";
-        campo.className = "form-control mb-3";
-
-        areaConto.prepend(campo);
-    }
+    
 }
 
 
@@ -428,13 +296,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     mostrarCordels(cordels);
 
-    mostrarContos(contos);
-
     criarPesquisas();
 
     pesquisarCordel();
-
-    pesquisarConto();
 
     criarMenuResponsivo();
 
