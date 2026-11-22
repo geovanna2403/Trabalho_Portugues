@@ -1,31 +1,6 @@
 
-// ==========================================
-// 1. ARRAY DE OBJETOS - TRABALHOS DO SITE
-// ==========================================
 
-const trabalhos = [
-   
-    {
-        nome: "Cordéis",
-        descricao: "Conheça nossas produções de cordéis.",
-        link: "cordel.html"
-    },
-    {
-        nome: "Resenhas",
-        descricao: "Conheça nossas produções de resenhas.",
-        link: "resenha.html"
-    },
-    {
-        nome: "Reportagens",
-        descricao: "Conheça nossas produções de reportagens.",
-        link: "reportagem.html"
-    }
-];
-
-
-// ==========================================
-// 2. ARRAY DE OBJETOS - CORDÉIS
-// ==========================================
+//--- 1. array de objetos - cordéis ---//
 
 const cordels = [
     {
@@ -40,7 +15,7 @@ const cordels = [
     },
     {
         autor: "Maria Eduarda Lira",
-        titulo: "Cordel da Lira",
+        titulo: "Cordel do artigo 24",
         arquivo: "Cordéis/MariaEduardeLira_cordel.pdf"
     },
     {
@@ -60,39 +35,43 @@ const cordels = [
     }
 ];
 
+//--- 2. array de objetos - contos ---//
+
+const contos = [
+    {
+        autor: "Geovanna Vital",
+        titulo: "Conto de Geovanna",
+        arquivo: "Contos/GeovanaVital_conto.pdf"
+    },
+    {
+        autor: "Marina Perera",
+        titulo: "Conto de Marina",
+        arquivo: "Contos/MarinaMatos_conto.pdf"
+    },
+    {
+        autor: "Maria Eduarda",
+        titulo: "Conto de Maria Eduarda",
+        arquivo: "Contos/MariaLira_conto.pdf"
+    },
+    {
+        autor: "Giovanna Fernandes",
+        titulo: "Conto de Giovanna",
+        arquivo: "Contos/Conto-GiovannaFernandes.pdf"
+    },
+    {
+        autor: "Rhuan Fonseca",
+        titulo: "Conto de Rhuan",
+        arquivo: "Contos/RhuanFonseca_conto.pdf"
+    },
+    {
+        autor: "Luis Felipe Moreno",
+        titulo: "Conto de Luis Felipe",
+        arquivo: "Contos/Luis Felipe_conto (1).pdf"
+    }
+];
 
 
-
-// ==========================================
-// 4. FUNÇÃO PARA MOSTRAR OS TRABALHOS
-// ==========================================
-
-function mostrarTrabalhos() {
-    const area = document.querySelector(".trabalhos");
-
-    if (!area) return;
-
-    area.innerHTML = "";
-
-    trabalhos.forEach((trabalho) => {
-        area.innerHTML += `
-            <div class="card">
-                <div class="card-body">
-                    <h3>${trabalho.nome}</h3>
-                    <p>${trabalho.descricao}</p>
-                    <a href="${trabalho.link}" class="btn btn-primary">
-                        Ver trabalhos
-                    </a>
-                </div>
-            </div>
-        `;
-    });
-}
-
-// ==========================================
-// 5. FUNÇÃO PARA MOSTRAR OS CORDÉIS
-// ==========================================
-
+//--- 3. mostrar cordéis ---//
 function mostrarCordels(lista) {
     const area = document.querySelector(".cordéis .conteiner");
 
@@ -100,7 +79,7 @@ function mostrarCordels(lista) {
 
     area.innerHTML = "";
 
-    lista.forEach((cordel) => {
+    lista.forEach(cordel => {
         area.innerHTML += `
             <div class="card">
                 <div class="card-body">
@@ -121,28 +100,77 @@ function mostrarCordels(lista) {
 }
 
 
-// ==========================================
-// 7. PESQUISA DE CORDÉIS COM FILTER E FIND
-// ==========================================
+//--- 4. mostrar contos ---//
+function mostrarContos(lista) {
+    const area = document.querySelector("#conto .conteiner");
 
+    if (!area) return;
+
+    area.innerHTML = "";
+
+    lista.forEach(conto => {
+        area.innerHTML += `
+            <div class="conto-card">
+                <h3>${conto.titulo}</h3>
+                <h4>${conto.autor}</h4>
+                <a href="${conto.arquivo}" target="_blank">
+                    Ler conto
+                </a>
+            </div>
+        `;
+    });
+
+    if (lista.length === 0) {
+        area.innerHTML = "<p>Nenhum conto encontrado.</p>";
+    }
+}
+
+
+//--- 5. criar campos de pesquisa ---//
+function criarPesquisas() {
+
+    const areaCordel = document.querySelector(".cordéis .conteiner");
+
+    if (areaCordel) {
+        const campo = document.createElement("input");
+
+        campo.type = "text";
+        campo.id = "pesquisa-cordel";
+        campo.placeholder = "🔎 Pesquisar cordel por título ou autor...";
+        campo.className = "form-control mb-3";
+
+        areaCordel.parentNode.insertBefore(campo, areaCordel);
+    }
+
+    const areaConto = document.querySelector("#conto .conteiner");
+
+    if (areaConto) {
+        const campo = document.createElement("input");
+
+        campo.type = "text";
+        campo.id = "pesquisa-conto";
+        campo.placeholder = "🔎 Pesquisar conto por título ou autor...";
+        campo.className = "form-control mb-3";
+
+        areaConto.parentNode.insertBefore(campo, areaConto);
+    }
+}
+
+
+//---- 6. pesquisar cordéis ----//
 function pesquisarCordel() {
+
     const campo = document.querySelector("#pesquisa-cordel");
 
     if (!campo) return;
 
     campo.addEventListener("input", function () {
+
         const pesquisa = campo.value.toLowerCase().trim();
 
-        const resultado = cordels.filter((cordel) => {
-            return (
-                cordel.titulo.toLowerCase().includes(pesquisa) ||
-                cordel.autor.toLowerCase().includes(pesquisa)
-            );
-        });
-
-        // Procura uma correspondência exata
-        const encontrado = cordels.find((cordel) =>
-            cordel.titulo.toLowerCase() === pesquisa
+        const resultado = cordels.filter(cordel =>
+            cordel.titulo.toLowerCase().includes(pesquisa) ||
+            cordel.autor.toLowerCase().includes(pesquisa)
         );
 
         mostrarCordels(resultado);
@@ -150,31 +178,27 @@ function pesquisarCordel() {
 }
 
 
-// ==========================================
-// 9. CRIAR CAMPOS DE PESQUISA
-// ==========================================
+//---- 7. pesquisar contos ----//
+function pesquisarConto() {
 
-function criarPesquisas() {
-    const areaCordel = document.querySelector(".cordéis .conteiner");
+    const campo = document.querySelector("#pesquisa-conto");
 
-    if (areaCordel && !document.querySelector("#pesquisa-cordel")) {
-        const campo = document.createElement("input");
+    if (!campo) return;
 
-        campo.type = "text";
-        campo.id = "pesquisa-cordel";
-        campo.placeholder = "Pesquisar cordel por título ou autor...";
-        campo.className = "form-control mb-3";
+    campo.addEventListener("input", function () {
 
-        areaCordel.parentNode.insertBefore(campo, areaCordel);
-    }
+        const pesquisa = campo.value.toLowerCase().trim();
 
-    
+        const resultado = contos.filter(conto =>
+            conto.titulo.toLowerCase().includes(pesquisa) ||
+            conto.autor.toLowerCase().includes(pesquisa)
+        );
+
+        mostrarContos(resultado);
+    });
 }
 
-
-// ==========================================
-// 10. MENU RESPONSIVO
-// ==========================================
+// 8. menu responsivo //
 
 function criarMenuResponsivo() {
     const menu = document.querySelector(".menu-links");
@@ -200,10 +224,7 @@ function criarMenuResponsivo() {
     });
 }
 
-
-// ==========================================
-// 11. ESTILO DO MENU RESPONSIVO
-// ==========================================
+// 9. estilo do menu responsivo
 
 function configurarMenu() {
     const estilo = document.createElement("style");
@@ -236,10 +257,7 @@ function configurarMenu() {
     document.head.appendChild(estilo);
 }
 
-
-// ==========================================
-// 12. MODO ESCURO
-// ==========================================
+// 10. modo escuro //
 
 function criarModoEscuro() {
     if (document.querySelector("#botao-tema")) return;
@@ -283,25 +301,21 @@ function criarModoEscuro() {
     document.head.appendChild(estilo);
 }
 
-
-// ==========================================
-// 13. INICIALIZAÇÃO DO SITE
-// ==========================================
+// 11.inicialização do site //
 
 document.addEventListener("DOMContentLoaded", function () {
 
     configurarMenu();
 
-    mostrarTrabalhos();
-
     mostrarCordels(cordels);
+    mostrarContos(contos);
 
     criarPesquisas();
 
     pesquisarCordel();
+    pesquisarConto();
 
     criarMenuResponsivo();
-
     criarModoEscuro();
 
 });
