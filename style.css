@@ -146,8 +146,43 @@ header .menu-links a:hover {
         font-size: 13px;
     }
 }
+body.tema-escuro #texto1,
+body.tema-escuro #texto2,
+body.tema-escuro #conto,
+body.tema-escuro .conto-card {
+    background-color: #162b45;
+    color: #eaf4ff;
+    border-color: #2699e6;
+}
 
+body.tema-escuro #texto1 h2,
+body.tema-escuro #texto1 p,
+body.tema-escuro #texto2 h2,
+body.tema-escuro #texto2 p,
+body.tema-escuro #conto h2,
+body.tema-escuro #conto p,
+body.tema-escuro .conto-card h3,
+body.tema-escuro .conto-card h4,
+body.tema-escuro .conto-card h6 {
+    color: #eaf4ff;
+}
 
+body.tema-escuro .conto-card a {
+    color: #70c5ff;
+}
+
+html,
+body {
+    background-color: #EAF4FF !important;
+    min-height: 100%;
+}
+
+body.tema-escuro {
+    background-color: #0b1729 !important;
+}
+body:not(.tema-escuro) main {
+    background-color: #EAF4FF !important;
+}
 /* index------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -204,6 +239,7 @@ header .menu-links a:hover {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 .hero img {
@@ -394,88 +430,10 @@ header img {
     width: 100px !important;
     height: 100px !important;
     max-width: 100px !important;
-    max-height: 100px  !important;
+    max-height: 100px !important;
     object-fit: contain !important;
 }
-
-
 /*sobre-------------------------------------------------------------------------------------------------------------------*/
-/*foto de perfil*/
-
-/* Área da equipe */
-.titulo-equipe {
-    text-align: center;
-    margin: 40px 0 25px;
-}
-
-/* Organização dos cards */
-.equipe {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Card individual */
-.fotoperfil {
-    width: 190px;
-    min-height: 240px;
-    padding: 18px 12px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-/* Efeito ao passar o mouse */
-.fotoperfil:hover {
-    transform: translateY(-5px);
-}
-
-/* Fotos padronizadas */
-.fotoperfil img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    border: 3px solid #4b9cd3;
-}
-
-/* Nome */
-.fotoperfil h2 {
-    font-size: 17px;
-    margin-top: 12px;
-}
-
-/* Função */
-.fotoperfil p {
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 0;
-}
-
-/* Celulares */
-@media (max-width: 600px) {
-    .equipe {
-        gap: 12px;
-        padding: 10px;
-    }
-
-    .fotoperfil {
-        width: 155px;
-        min-height: 220px;
-    }
-
-    .fotoperfil img {
-        width: 95px;
-        height: 95px;
-    }
-}
-
-
 /*foto de perfil*/
 
 /* Área da equipe */
@@ -616,6 +574,29 @@ header img {
         font-size: 15px;
     }
 }
+
+.texto-sobre {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #DFF3E1;
+    border-left: 5px solid #1E6FB8;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(32, 50, 63, 0.12);
+}
+
+.texto-sobre h2 {
+    color: #0F6B4F;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.texto-sobre p {
+    color: #20323F;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 0;
+}
 /*conto-------------------------------------------------------------------------------------------------------------------*/
 /* FOTO DO LIVRO */
 
@@ -687,33 +668,65 @@ header img {
         max-width: 250px;
     }
 }
+
 .conto-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    margin: 30px auto;
-    padding: 10px;
-}
-
-.conto-item img {
+    justify-content: center;
+    gap: 40px;
     width: 100%;
-    max-width: 300px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 12px;
-    border: 4px solid #1a66cc;
-    padding: 5px;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.conto-item figcaption {
+.imagem-livro {
+    flex: 0 0 240px;
+    padding: 12px;
+    border: 3px solid #1a66cc;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.imagem-livro img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: none;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.imagem-livro figcaption {
     margin-top: 12px;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
     color: #555;
     font-style: italic;
 }
 
+.informacoes-livro {
+    flex: 1;
+    min-width: 0;
+}
+
+.informacoes-livro h2 {
+    color: #0d33b3;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.informacoes-livro p {
+    color: #26394d;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 25px;
+}
 /* SEÇÃO DOS CONTOS */
 
 #conto {
@@ -722,6 +735,7 @@ header img {
     border-radius: 15px;
     margin: 30px auto;
 }
+
 
 /* TÍTULO */
 
@@ -740,50 +754,73 @@ header img {
 }
 
 /* CARDS */
+/* CARDS MODERNOS */
+/* GRADE DOS CONTOS */
 
+#conto .lista-contos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
 #conto .conto-card {
-    background: rgba(255, 255, 255, 0.90);
-    border: 2px solid #ffffff;
-    border-radius: 15px;
-    padding: 25px;
+    background: linear-gradient(145deg, #10283f, #07182b);
+    border: 1px solid #2699e6;
+    border-radius: 18px;
+    padding: 28px;
     margin: 20px 0;
-    box-shadow: 0 3px 8px #00000020;
-    text-align: center;
+    text-align: left;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 #conto .conto-card:hover {
     transform: translateY(-7px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 10px 25px rgba(38, 153, 230, 0.3);
+}
+
+#conto .numero-conto {
+    display: inline-block;
+    color: #70c5ff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
 }
 
 #conto .conto-card h3 {
-    color: #0d33b3;
-    font-size: 25px;
+    color: white;
+    font-size: 23px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
-#conto .conto-card h4 {
-    color: #333;
-    font-size: 18px;
-    margin: 12px 0 20px;
+#conto .conto-card p {
+    color: #c5d9eb;
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 22px;
 }
 
 /* BOTÃO */
 
 #conto .conto-card a {
     display: inline-block;
-    background-color: #1a66cc;
+    background: linear-gradient(90deg, #2699e6, #1a66cc);
     color: white;
     text-decoration: none;
-    padding: 10px 30px;
+    padding: 11px 25px;
     border-radius: 8px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 #conto .conto-card a:hover {
-    background-color: #0d33b3;
+    background: #70c5ff;
+    color: #07182b;
+    transform: scale(1.04);
 }
 
 /* TEXTOS EXPLICATIVOS */
@@ -836,6 +873,9 @@ header img {
     #conto h2 {
         font-size: 25px;
     }
+    #conto .lista-contos {
+    grid-template-columns: 1fr;
+}
 }
 
 /*cordel------------------------------------------------------------------------------------------------------------------*/
@@ -847,12 +887,6 @@ header img {
 
 
 /*resenha-----------------------------------------------------------------------------------------------------------------*/
-
-body {
-  background-color: #FFF9EF; /* Aplica a cor creme no fundo */
-  color: #333333;           /* Cor do texto para boa legibilidade */
-}
-
 
 
 .titulo-resenha {
@@ -916,10 +950,11 @@ body {
     border-left: 4px solid #2699e6;
     padding-left: 20px;
     margin: 30px 40px;
-    .conteudo-resenhas {
+}
+
+.conteudo-resenhas {
     background-color: #f7f4ef;
     padding: 20px 5%;
-}
 }
 
 .conteudo-resenha h4 {
@@ -959,34 +994,19 @@ body {
 
 .card-resenha {
     width: 90%;
-    min-height: 130px;
-    margin: 0 auto;
-    display: grid;
-    align-items: center;
-    border-radius: 35px;
-    overflow: hidden;
+    min-height: 150px;
+    margin: 0 auto 25px;
     display: flex;
     align-items: center;
     gap: 20px;
-    margin-bottom: 25px;
-    grid-template-columns: repeat (2, 1fr);
-    
-     background: linear-gradient(
-        90deg,
-        #2699e6,
-        #1a66cc
-    );
+    background: linear-gradient(90deg, #2699e6, #1a66cc);
     color: white;
-
-
     border: 1px solid #2699e6;
     border-radius: 30px;
-
     padding: 20px;
-    min-height: 150px;
+    overflow: hidden;
     box-shadow: 0 3px 10px rgba(16, 43, 84, 0.08);
 }
-
 .card-resenha img {
     width: 90px;
     height: 130px;
@@ -1096,13 +1116,7 @@ body {
     text-underline-offset: 8px;
 }
 
-.curiosidades .accordion-body p {
-    background-color: #ffffff;
-    color: #333;
-    padding: 8px;
-    line-height: 1.7;
-    margin-bottom: 8px;
-}
+
 
 .curiosidades .accordion-body i {
     color:#000000;
@@ -1110,17 +1124,6 @@ body {
     text-underline-offset: 8px;
 }
 
-.curiosidades .accordion-body p{
-    padding: 3px;
-
-}
-
-/* Celulares */
-@media (max-width: 650px) {
-    .lista-resenhas {
-        grid-template-columns: 1fr;
-    }
-}
 
 
 /* ===== RESENHA - CELULAR ===== */
@@ -1206,6 +1209,7 @@ body {
         transform: none;
     }
 }
+
 /*reportagem-------------------------------------------------------------------------------------------------------------- */
 .imagem-reportagem {
     width: 85%;
@@ -1271,3 +1275,6 @@ body {
     color: #0d33b3
 }
 
+
+
+/*reportagem-------------------------------------------------------------------------------------------------------------- */

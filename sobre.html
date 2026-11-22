@@ -11,12 +11,12 @@
      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
      crossorigin="anonymous"></script>
      <link rel="icon" type="image/png" href="logo.jpeg">
-     <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
      <header class="header">
-                    <img class="logo.menu" src="logo.jpeg" alt="Logo do site">
+  <img class="logo.menu" src="logo.jpeg" alt="Logo do site">
     <nav class="menu-links" aria-label="Menu principal">
         <a href="index.html">Início</a>
         <a href="sobre.html">Sobre</a>
@@ -40,8 +40,8 @@
     </div>
 
 </div>
-
-      <h1>Nosso site</h1>
+<section class="texto-sobre">
+      <h2>Nosso site</h2>
     <p>
         Nosso site foi criado com muito carinho para compartilhar
         o maravilhoso mundo da literatura por meio de
@@ -52,10 +52,9 @@
         Nosso objetivo é espalhar conhecimento, cultura e alegria,
         tornando a leitura cada vez mais presente em nossas vidas!
     </p>
-
-        <div class="row g-3">
-    <div class="col-12">
-    <div class="card">
+</section>
+       
+   <section class="texto-sobre">
         <h2>Introdução</h2>
         
         <p>
@@ -66,13 +65,14 @@
             da nossa querida professora e coordenadora de curso, professora Fabiana, uma excelente professora de Português, que nos 
             acompanhou nessa jornada com dedicação, paciência e carinho.
          </p>
-       </div>
+   </section>
 
 
     <div class="row g-3">
+
     <div class="col-12">
     <div class="card">
-         <a href="conto.html" class="card card-link">Conto</a>
+        <a href="conto.html" class="card-link">Conto</a>
         <h2>Conto</h2>
         
         <p>
@@ -87,9 +87,10 @@
         </p>
        </div>
        </div>
+
        <div class="col-12">
       <div class="card">
-         <a href="cordel.html" class="card card-link">Cordel</a>
+        <a href="cordel.html" class="card card-link">Cordel</a>
         <h2>Cordel</h2>
         <p>
             A literatura de cordel é um gênero popular formado por poemas,
@@ -100,11 +101,13 @@
             Sua importância está na valorização da cultura popular,
             na preservação das tradições e no incentivo à leitura.
         </p>
+
     </div>
     </div>
+
     <div class="col-12">
     <div class="card">
-        <a href="reportagem.html" class="card card-link">Reportagem</a>
+       <a href="reportagem.html" class="card-link">Reportagem</a>
         <h2>Reportagem</h2>
         <p>
             A reportagem é um gênero jornalístico que tem como objetivo
@@ -118,6 +121,7 @@
         </p>
     </div>
     </div>
+
     <div class="col-12">
     <div class="card">
         <a href="resenha.html" class="card card-link">Resenha</a>
@@ -133,9 +137,7 @@
         </p>
     </div>
     </div>
-       </div>
-</div>
-
+       
 
 
     <h2 class="titulo-equipe">Nossa equipe</h2>
@@ -181,24 +183,25 @@
     </div>
 
 </main>
+
  <footer class="rodape">
-        <div class="rodape-conteudo">
-            <div class="rodape-projeto"></div>
-    <p>Trabalho de Português</p>
-  </div>
+    <div class="rodape-conteudo">
+        <div class="rodape-projeto"></div>
+        <p>Trabalho de Português</p>
+    </div>
+
     <nav class="rodape-links">
         <a href="index.html">Início</a>
         <a href="sobre.html">Sobre</a>
         <a href="conto.html">Conto</a>
         <a href="cordel.html">Cordel</a>
         <a href="resenha.html">Resenha</a>
-        <a href="reportagem.html">Reportagem </a>
+        <a href="reportagem.html">Reportagem</a>
     </nav>
-</div>
-<div class="rodape-final">
-     <p>© 2026 — Projeto acadêmico</p>
-      
-     </div>
-   </footer>
+
+    <div class="rodape-final">
+        <p>© 2026 — Projeto acadêmico</p>
+    </div>
+</footer>
 </body>
 </html>
