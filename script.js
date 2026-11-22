@@ -1,7 +1,7 @@
 
 
 // ==========================================
-// 1. ARRAY DE OBJETOS - TRABALHOS DO SITE
+//  ARRAY DE OBJETOS - TRABALHOS DO SITE
 // ==========================================
 
 const trabalhos = [
@@ -29,78 +29,8 @@ const trabalhos = [
 
 
 
-//--- 1. array de objetos - cordéis ---//
-
-const cordels = [
-    {
-        autor: "Luís Felipe",
-        titulo: "Cordel dos artigos 12, 19 e 24",
-        arquivo: "Cordéis/LuísFelipeMoreno_cordel.pdf"
-    },
-    {
-        autor: "Giovanna Fernandes",
-        titulo: "Cordel do artigo 19",
-        arquivo: "Cordéis/GiovannaFernandes_cordel.pdf"
-    },
-    {
-        autor: "Maria Eduarda Lira",
-        titulo: "Cordel do artigo 24",
-        arquivo: "Cordéis/MariaEduardeLira_cordel.pdf"
-    },
-    {
-        autor: "Marina",
-        titulo: "Cordel da Marina",
-        arquivo: "Cordéis/MarinaMatos_cordel.pdf"
-    },
-    {
-        autor: "Rhuan Fonseca",
-        titulo: "Cordel do artigo 4",
-        arquivo: "Cordéis/RhuanFonseca_cordel.pdf"
-    },
-    {
-        autor: "Geovanna Vital",
-        titulo: "Resumo de todos os artigos",
-        arquivo: "Cordéis/GeovanaVitalCorrigido_cordel.pdf"
-    }
-];
-
-//--- 2. array de objetos - contos ---//
-
-const contos = [
-    {
-        autor: "Geovanna Vital",
-        titulo: "Conto de Geovanna",
-        arquivo: "Contos/GeovanaVital_conto.pdf"
-    },
-    {
-        autor: "Marina Perera",
-        titulo: "Conto de Marina",
-        arquivo: "Contos/MarinaMatos_conto.pdf"
-    },
-    {
-        autor: "Maria Eduarda",
-        titulo: "Conto de Maria Eduarda",
-        arquivo: "Contos/MariaLira_conto.pdf"
-    },
-    {
-        autor: "Giovanna Fernandes",
-        titulo: "Conto de Giovanna",
-        arquivo: "Contos/Conto-GiovannaFernandes.pdf"
-    },
-    {
-        autor: "Rhuan Fonseca",
-        titulo: "Conto de Rhuan",
-        arquivo: "Contos/RhuanFonseca_conto.pdf"
-    },
-    {
-        autor: "Luis Felipe Moreno",
-        titulo: "Conto de Luis Felipe",
-        arquivo: "Contos/Luis Felipe_conto (1).pdf"
-    }
-];
-
 // ==========================================
-// 3. FUNÇÃO PARA MOSTRAR OS TRABALHOS
+//  FUNÇÃO PARA MOSTRAR OS TRABALHOS
 // ==========================================
 
 function mostrarTrabalhos() {
@@ -126,167 +56,13 @@ function mostrarTrabalhos() {
 }
 }
 
-// ==========================================
-// 4. FUNÇÃO PARA MOSTRAR OS CORDÉIS
-// ==========================================
 
-function mostrarCordels(lista = cordels) {
 
-    const area = document.querySelector(".cordéis .conteiner");
 
-    if (!area) return;
-
-    area.innerHTML = "";
-    for (const cordel of lista) {
-        area.innerHTML += `
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">${cordel.titulo}</h5>
-                    <p class="card-text">Autor: ${cordel.autor}</p>
-                    <a href="${cordel.arquivo}" target="_blank"
-                       class="btn btn-primary">
-                        Ler cordel
-                    </a>
-                </div>
-            </div>
-        `;
-    }
-           
-
-    if (lista.length === 0) {
-        area.innerHTML = "<p>Nenhum cordel encontrado.</p>";
-    }
-}
 
 
 // ==========================================
-// 4. FUNÇÃO PARA MOSTRAR OS CONTOS
-// ==========================================
-
-function mostrarContos(lista) {
-    const area = document.querySelector("#conto .conteiner");
-
-// ==========================================
-// 5. PESQUISA DE CORDÉIS COM FILTER E FIND
-// ==========================================
-    if (!area) return;
-
-    area.innerHTML = "";
-
-    lista.forEach(conto => {
-        area.innerHTML += `
-            <div class="conto-card">
-                <h3>${conto.titulo}</h3>
-                <h4>${conto.autor}</h4>
-                <a href="${conto.arquivo}" target="_blank">
-                    Ler conto
-                </a>
-            </div>
-        `;
-    });
-
-    if (lista.length === 0) {
-        area.innerHTML = "<p>Nenhum conto encontrado.</p>";
-    }
-}
-
-
-//--- 5. criar campos de pesquisa ---//
-function criarPesquisas() {
-
-    const areaCordel = document.querySelector(".cordéis .conteiner");
-
-    if (areaCordel) {
-        const campo = document.createElement("input");
-
-        campo.type = "text";
-        campo.id = "pesquisa-cordel";
-        campo.placeholder = "🔎 Pesquisar cordel por título ou autor...";
-        campo.className = "form-control mb-3";
-
-        areaCordel.parentNode.insertBefore(campo, areaCordel);
-    }
-
-    const areaConto = document.querySelector("#conto .conteiner");
-
-    if (areaConto) {
-        const campo = document.createElement("input");
-
-        campo.type = "text";
-        campo.id = "pesquisa-conto";
-        campo.placeholder = "🔎 Pesquisar conto por título ou autor...";
-        campo.className = "form-control mb-3";
-
-        areaConto.parentNode.insertBefore(campo, areaConto);
-    }
-}
-
-
-//---- 6. pesquisar cordéis ----//
-function pesquisarCordel() {
-
-    const campo = document.querySelector("#pesquisa-cordel");
-
-    if (!campo) return;
-
-    campo.addEventListener("input", function () {
-
-        const pesquisa = campo.value.toLowerCase().trim();
-
-const resultado = buscarCordel(pesquisa);
-
-// Procura uma correspondência exata
-const encontrado = cordels.find((cordel) =>
-    cordel.titulo.toLowerCase() === pesquisa
-);
-
-          if (encontrado) {
-            console.log("Cordel encontrado:", encontrado.titulo);
-         }
-         mostrarCordels(resultado);
-      });
-    }
-     function buscarCordel(pesquisa) {
-    const resultado = cordels.filter((cordel) => {
-        return (
-            cordel.titulo.toLowerCase().includes(pesquisa) ||
-            cordel.autor.toLowerCase().includes(pesquisa)
-        );
-    });
-
-    return resultado;
-}
-
-// ==========================================
-// 6. CRIAR CAMPOS DE PESQUISA
-// ==========================================
-
-
-// ==========================================
-// 7. PESQUISAR CONTOS
-// ==========================================
-
-function pesquisarConto() {
-
-    const campo = document.querySelector("#pesquisa-conto");
-
-    if (!campo) return;
-
-    campo.addEventListener("input", function () {
-
-        const pesquisa = campo.value.toLowerCase().trim();
-
-        const resultado = contos.filter(conto =>
-            conto.titulo.toLowerCase().includes(pesquisa) ||
-            conto.autor.toLowerCase().includes(pesquisa)
-        );
-
-        mostrarContos(resultado);
-    });
-}
-
-// ==========================================
-// 8. MENU RESPONSIVO
+//  MENU RESPONSIVO
 // ==========================================
 
 function criarMenuResponsivo() {
@@ -314,7 +90,7 @@ function criarMenuResponsivo() {
 }
 
 // ==========================================
-// 9. ESTILO DO MENU RESPONSIVO
+//  ESTILO DO MENU RESPONSIVO
 // ==========================================
 
 function configurarMenu() {
@@ -352,7 +128,7 @@ function configurarMenu() {
 }
 
 // ==========================================
-// 10. MODO ESCURO
+//  MODO ESCURO
 // ==========================================
 
 function criarModoEscuro() {
@@ -530,51 +306,6 @@ function criarModoEscuro() {
 }
 
 
- // ==========================================
- // 10. PESQUISA NAS PÁGINAS DE PRODUÇÕES
- // ==========================================
-
-function configurarPesquisa(idCampo, seletorCards, idMensagem) {
-
-    const campo = document.querySelector(`#${idCampo}`);
-    const cards = document.querySelectorAll(seletorCards);
-    const mensagem = document.querySelector(`#${idMensagem}`);
-
-    if (!campo || cards.length === 0) return;
-
-    campo.addEventListener("input", function () {
-
-        const pesquisa = campo.value
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .trim();
-
-        let encontrados = 0;
-
-        cards.forEach(card => {
-
-            const texto = card.textContent
-                .toLowerCase()
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "");
-
-            const corresponde = texto.includes(pesquisa);
-
-            card.style.display = corresponde ? "" : "none";
-
-            if (corresponde) {
-                encontrados++;
-            }
-        });
-
-        if (mensagem) {
-            mensagem.textContent = encontrados === 0
-                ? "Nenhum resultado encontrado."
-                : "";
-        }
-    });
-}
 
 // ==========================================
 // PESQUISA GERAL - CONTOS, CORDEIS E RESENHAS
@@ -603,7 +334,7 @@ function configurarPesquisaGeral() {
     pesquisas.forEach(item => {
 
         const campo = document.getElementById(item.campo);
-        const cards = document.querySelectorAll(item.cards);
+        const cards = Array.from(document.querySelectorAll(item.cards));
         const mensagem = document.getElementById(item.mensagem);
 
         if (!campo || cards.length === 0) return;
@@ -616,28 +347,35 @@ function configurarPesquisaGeral() {
                 .replace(/[\u0300-\u036f]/g, "")
                 .trim();
 
-            let encontrados = 0;
-
-            cards.forEach(card => {
-
+            // FILTER: seleciona todos os cards que correspondem à pesquisa
+            const encontrados = cards.filter(card => {
                 const texto = card.textContent
                     .toLowerCase()
                     .normalize("NFD")
                     .replace(/[\u0300-\u036f]/g, "");
 
-                const encontrou = texto.includes(pesquisa);
+                return texto.includes(pesquisa);
+            });
 
-                card.style.display = encontrou ? "" : "none";
+            // FIND: procura o primeiro card que corresponde à pesquisa
+            const primeiroEncontrado = cards.find(card => {
+                const texto = card.textContent
+                    .toLowerCase()
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "");
 
-                if (encontrou) {
-                    encontrados++;
-                }
+                return texto.includes(pesquisa);
+            });
+
+            // Mostra os resultados encontrados e esconde os outros
+            cards.forEach(card => {
+                card.style.display = encontrados.includes(card) ? "" : "none";
             });
 
             if (mensagem) {
-                mensagem.textContent = encontrados === 0
-                    ? "Nenhum resultado encontrado."
-                    : "";
+                mensagem.textContent = primeiroEncontrado
+                    ? ""
+                    : "Nenhum resultado encontrado.";
             }
 
         });
@@ -646,7 +384,7 @@ function configurarPesquisaGeral() {
 }
 
 // ==========================================
-// 11. INICIALIZAÇÃO DO SITE
+//  INICIALIZAÇÃO DO SITE
 // ==========================================
 
 
