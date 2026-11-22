@@ -529,25 +529,133 @@ function criarModoEscuro() {
     document.head.appendChild(estilo);
 }
 
+
+ // ==========================================
+ // 10. PESQUISA NAS PÁGINAS DE PRODUÇÕES
+ // ==========================================
+
+function configurarPesquisa(idCampo, seletorCards, idMensagem) {
+
+    const campo = document.querySelector(`#${idCampo}`);
+    const cards = document.querySelectorAll(seletorCards);
+    const mensagem = document.querySelector(`#${idMensagem}`);
+
+    if (!campo || cards.length === 0) return;
+
+    campo.addEventListener("input", function () {
+
+        const pesquisa = campo.value
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+
+        let encontrados = 0;
+
+        cards.forEach(card => {
+
+            const texto = card.textContent
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+
+            const corresponde = texto.includes(pesquisa);
+
+            card.style.display = corresponde ? "" : "none";
+
+            if (corresponde) {
+                encontrados++;
+            }
+        });
+
+        if (mensagem) {
+            mensagem.textContent = encontrados === 0
+                ? "Nenhum resultado encontrado."
+                : "";
+        }
+    });
+}
+
+// ==========================================
+// PESQUISA GERAL - CONTOS, CORDEIS E RESENHAS
+// ==========================================
+
+function configurarPesquisaGeral() {
+
+    const pesquisas = [
+        {
+            campo: "pesquisa-contos",
+            cards: "#conto .conto-card",
+            mensagem: "mensagem-contos"
+        },
+        {
+            campo: "pesquisa-cordeis",
+            cards: ".listas-resenhas .card-resenha",
+            mensagem: "mensagem-cordeis"
+        },
+        {
+            campo: "pesquisa-resenhas",
+            cards: ".listas-resenhas .card-resenha",
+            mensagem: "mensagem-resenhas"
+        }
+    ];
+
+    pesquisas.forEach(item => {
+
+        const campo = document.getElementById(item.campo);
+        const cards = document.querySelectorAll(item.cards);
+        const mensagem = document.getElementById(item.mensagem);
+
+        if (!campo || cards.length === 0) return;
+
+        campo.addEventListener("input", function () {
+
+            const pesquisa = campo.value
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .trim();
+
+            let encontrados = 0;
+
+            cards.forEach(card => {
+
+                const texto = card.textContent
+                    .toLowerCase()
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "");
+
+                const encontrou = texto.includes(pesquisa);
+
+                card.style.display = encontrou ? "" : "none";
+
+                if (encontrou) {
+                    encontrados++;
+                }
+            });
+
+            if (mensagem) {
+                mensagem.textContent = encontrados === 0
+                    ? "Nenhum resultado encontrado."
+                    : "";
+            }
+
+        });
+
+    });
+}
+
 // ==========================================
 // 11. INICIALIZAÇÃO DO SITE
 // ==========================================
 
+
 document.addEventListener("DOMContentLoaded", function () {
 
     configurarMenu();
-
     mostrarTrabalhos();
-
-    mostrarCordels(cordels);
-    mostrarContos(contos);
-
-    criarPesquisas();
-
-    pesquisarCordel();
-    pesquisarConto();
-
     criarMenuResponsivo();
     criarModoEscuro();
+    configurarPesquisaGeral();
 
 });
