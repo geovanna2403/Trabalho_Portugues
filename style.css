@@ -433,6 +433,21 @@ header img {
     max-height: 100px !important;
     object-fit: contain !important;
 }
+/* AJUSTE DOS CARDS DE TRABALHOS */
+
+.trabalhos .card {
+    height: auto;
+    min-height: 190px;
+}
+
+.trabalhos .card h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+.trabalhos .card p {
+    line-height: 1.5;
+}
 .qr-code {
     text-align: center;
     margin: 30px auto;
@@ -607,7 +622,7 @@ header img {
 }
 
 .texto-sobre h2 {
-    color: #0F6B4F;
+    color: #0d33b3;
     margin-bottom: 15px;
     font-size: 1.6rem;
 }
@@ -1305,15 +1320,15 @@ header img {
     margin-bottom: 20px;
     padding: 2px;
 }
-
 .reportagem p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #000000;
+    text-align: justify;
     border-left: 4px solid #2699e6;
-    padding-left: 20px;
-    margin: 20px 30px;
-    .reportagem p {
     background-color: #f7f4ef;
+    margin: 20px 30px;
     padding: 20px 5%;
-}
 }
 
 .titulo-reportagens {

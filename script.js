@@ -480,6 +480,17 @@ function criarModoEscuro() {
             color: #eaf4ff;
             border-color: #2699e6;
         }
+            /* TEXTOS DAS CURIOSIDADES */
+
+       body.tema-escuro .curiosidades .accordion-body p {
+       background-color: #162b45;
+        color: #eaf4ff;
+       }
+
+       body.tema-escuro .curiosidades .accordion-body strong,
+      body.tema-escuro .curiosidades .accordion-body i {
+      color: #70c5ff;
+        }
 
         body.tema-escuro .accordion-button:not(.collapsed) {
             background-color: #1a66cc;
@@ -501,6 +512,18 @@ function criarModoEscuro() {
         body.tema-escuro .menu-links a {
             color: #eaf4ff;
         }
+            /* PÁGINA DE REPORTAGEM */
+
+       body.tema-escuro .reportagem p {
+       background-color: #162b45;
+       color: #eaf4ff;
+       border-left-color: #2699e6;
+       }
+
+     body.tema-escuro .titulo-reportagens,
+     body.tema-escuro .titulo-entrevista {
+    color: #70c5ff;
+}
     `;
 
     document.head.appendChild(estilo);
