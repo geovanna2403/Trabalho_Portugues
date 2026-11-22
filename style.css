@@ -1094,7 +1094,7 @@ header img {
 .curiosidades .accordion-body p {
     background-color: #ffffff;
     color: #333;
-    padding: 20px;
+    padding: 0px;
     line-height: 1.7;
     margin-bottom: 20px;
 }
@@ -1122,7 +1122,14 @@ header img {
     color:#000000;
     text-decoration-thickness: 2px;
     text-underline-offset: 8px;
+     color: #1a66cc;
+    text-decoration: underline;
+    text-decoration-color: #1a66cc;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+    padding: 8px;
 }
+
 
 
 
